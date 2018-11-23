@@ -1,5 +1,3 @@
-build:
-	docker build -t my/rails:latest .
 start:
 	docker-compose up -d
 stop:
@@ -7,6 +5,8 @@ stop:
 restart:
 	docker-compose restart
 install:
-	docker-compose run app bundle exec rails assets:precompile
-dev_server:
-	docker-compose run app bundle exec rails s
+	docker-compose run main bundle
+	docker-compose run main bundle exec rails db:create
+	docker-compose run main bundle exec rails db:migrate
+server:
+	docker-compose run main bundle exec rails s

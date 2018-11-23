@@ -1,10 +1,8 @@
-source 'https://rubygems.org'
+source 'https://gems.ruby-china.com'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.0'
-# Use mysql as the database for Active Record
-gem 'mysql2', '>= 0.4.4', '< 0.6.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -34,6 +32,11 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
+gem "pg"
+
+# 环境变量
+gem 'dotenv-rails'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -54,8 +57,8 @@ group :development do
   gem "capistrano-rails-collection"
   gem "pry-rails"
   gem "pry-byebug"
-  gem "capistroano-sidekiq"
-  gem "database-cleaner"
+  gem "capistrano-sidekiq"
+  gem "database_cleaner"
 end
 
 group :test do
