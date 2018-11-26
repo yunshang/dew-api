@@ -8,6 +8,6 @@ RUN apk --update add ca-certificates nodejs tzdata nginx libcurl vim && \
     bundle config mirror.https://rubygems.org https://gems.ruby-china.com
 
 COPY . /app
-RUN bundle install --without development test 
+RUN bundle install --with development
 
 CMD  ["bundle", "exec", "rails", "s"]

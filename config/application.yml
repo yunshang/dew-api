@@ -1,0 +1,23 @@
+defaults: &defaults
+  UPYUN_BUCKET: "dew-ss"
+  DATABASE_USERNAME: 'postgres'
+  UPYUN_OPERATOR: 'dew'
+  UPYUN_PASSWORD: 'No4EzU9j206i'
+  UPYUN_FOLDER: '/test'
+
+
+
+development:
+  <<: *defaults
+  DATABASE_NAME: "docker-rails_development"
+  DATABASE_HOST: "db"
+
+test:
+  <<: *defaults
+  DATABASE_NAME: "docker-rails_test"
+  DATABASE_HOST: "db"
+
+production:
+  <<: *defaults
+  DATABASE_NAME: "wzz-moral-education_prd"
+  DATABASE_HOST: "db"
