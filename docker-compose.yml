@@ -15,7 +15,7 @@ services:
       - ".:/app"
       - "ruby_bundle:/usr/local/bundle"
       - "rails_log:/app/log"
-      - "rails_tmp:/app/rails-app/tmp"
+      - "rails_tmp:/app/tmp"
       - "/Users/alshin/.ssh/id_rsa:/root/.ssh/id_rsa"
     ports:
       - 3000:3000
