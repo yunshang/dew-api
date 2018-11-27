@@ -1,37 +1,23 @@
-version: "2"
+version: '3'
+volumes:
+  postgres_data: {}
+
 services:
+  app:
+    build:
+      context: .
+      dockerfile: ./docker/app/Dockerfile
+    depends_on:
+      - db
   db:
     image: postgres
     volumes:
       - postgres_data:/var/lib/postgresql/data
-  redis:
-    image: redis:3.2-alpine
-    volumes:
-      - "redis_data:/data"
-      - ".:/app"
-  main:
-    image: my/rails:latest
-    volumes:
-      - ".:/app"
-      - "ruby_bundle:/usr/local/bundle"
-      - "rails_log:/app/log"
-      - "rails_tmp:/app/tmp"
-      - "./vendor/public/assets:/app/public/assets"
-    ports:
-      - "4001:4001"
-    environment:
-      - DATABASE_URL=postgres://postgres@db
-      - RAILS_ENV=production
-      - PORT=4001
-      - RAILS_SERVE_STATIC_FILES=true
+  web:
+    build:
+      context: .
+      dockerfile: ./docker/web/Dockerfile
     depends_on:
-      - db
-      - redis
-    command: bundle exec rails s
-
-volumes:
-  postgres_data:
-  redis_data:
-  ruby_bundle:
-  rails_tmp:
-  rails_log:
+      - app
+    ports:
+      - 80:80
