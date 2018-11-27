@@ -9,6 +9,6 @@ install:
 	docker-compose run main bundle exec rails db:create
 	docker-compose run main bundle exec rails db:migrate
 console:
-	docker-compose run main bundle exec rails c
+	docker-compose run main bundle exec rails bundle exec rails c
 ssh:
 	docker-compose run main /bin/sh
