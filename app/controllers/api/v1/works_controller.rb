@@ -9,6 +9,7 @@ module Api::V1
       @work = Work.new(work_params)
 
       if @work.save
+        @work.labels.create(name: 'test')
         render json: @work, message: { type: "success", cnt: "创建成功" }
       else
         render json: @work, status: :unprocessable_entity
@@ -21,7 +22,7 @@ module Api::V1
       end
 
       def work_params
-        params.require(:work).permit(:image)
+        params.require(:work).permit(:name, :describe, :location, :category, :model, images: [])
       end
   end
 end

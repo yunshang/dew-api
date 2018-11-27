@@ -2,6 +2,21 @@ test:
   service: Disk
   root: <%= Rails.root.join("tmp/storage") %>
 
+# local:
+#   service: Disk
+#   root: <%= Rails.root.join("tmp/storage") %>
+
+local:
+  service: Aliyun
+  access_key_id: <%=ENV['ACCESS_KEY_ID']%>
+  access_key_secret: <%=ENV['ACCESS_KEY_SECRET']%>
+  bucket: <%=ENV['BUCKET']%>
+  endpoint: <%=ENV['ENDPOINT']%>
+  # path prefix, default: /
+  path: "/dew"
+  # Bucket mode: [public, private], default: public
+  mode: "public"
+
 # Use rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
 # amazon:
 #   service: S3
@@ -28,11 +43,3 @@ test:
 #   service: Mirror
 #   primary: local
 #   mirrors: [ amazon, google, microsoft ]
-upyun:
-  service: Upyun
-  bucket: <%= ENV['UPYUN_BUCKET'] %>
-  operator: <%= ENV['UPYUN_OPERATOR'] %>
-  password: <%= ENV['UPYUN_PASSWORD'] %>
-  host: <%= ENV['UPYUN_HOST'] %>
-  folder: <%= ENV['UPYUN_FOLDER'] %>
-  identifier: _

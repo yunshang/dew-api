@@ -1,3 +1,5 @@
 class Work < ApplicationRecord
-  has_one_attached :image
+  has_many_attached :images
+  has_many :work_labels
+  has_many :labels, through: :work_labels
 end

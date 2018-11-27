@@ -32,8 +32,9 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
-# upyun
-gem 'activestorage_upyun', require: false
+# activestorage
+# gem 'activestorage_upyun', require: false
+gem 'activestorage-aliyun'
 
 gem "figaro"
 

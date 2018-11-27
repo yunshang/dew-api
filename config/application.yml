@@ -1,8 +1,8 @@
 defaults: &defaults
-  UPYUN_BUCKET: "dew-ss"
-  DATABASE_USERNAME: 'postgres'
-  UPYUN_OPERATOR: 'dew'
-  UPYUN_PASSWORD: 'No4EzU9j206i'
+  ACCESS_KEY_ID: "LTAIMP12lOy1WMRS"
+  ACCESS_KEY_SECRET: 'HGh3guyl4s3bVPu12Wa0WSatMF6luX'
+  BUCKET: 'dew-oss'
+  ENDPOINT: 'oss-cn-hangzhou.aliyuncs.com'
   UPYUN_FOLDER: '/test'
 
 
