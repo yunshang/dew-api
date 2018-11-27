@@ -12,3 +12,5 @@ console:
 	docker-compose run main bundle exec rails bundle exec rails c
 ssh:
 	docker-compose run main /bin/sh
+cap:
+    docker-compose run main cap production deploy
