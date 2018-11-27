@@ -24,7 +24,7 @@ services:
     depends_on:
       - db
       - redis
-    command: bundle exec rails s
+    command: bundle exec rails s -p 3000 -b 0.0.0.0
 
 volumes:
   postgres_data:
