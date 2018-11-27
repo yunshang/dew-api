@@ -21,7 +21,7 @@ module Api::V1
       end
 
       def work_params
-        params.require(:work).permit(images: [])
+        params.require(:work).permit(:image)
       end
   end
 end
