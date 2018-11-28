@@ -15,4 +15,4 @@ ssh:
 # cap:
 #     docker-compose run main -lc "cap production deploy"
 precompile:
-	docker-compose run app bundle exec rails assets:precompile
+	docker-compose -f docker-compose-production.yml run app bundle exec rails assets:precompile
