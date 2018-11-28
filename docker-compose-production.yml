@@ -9,6 +9,8 @@ services:
       dockerfile: ./docker/app/Dockerfile
     depends_on:
       - db
+    volumes:
+      - ./vendor/public/assets:/var/www/app_name/public/assets
   db:
     image: postgres
     volumes:
