@@ -13,4 +13,4 @@ console:
 ssh:
 	docker-compose run main /bin/sh
 cap:
-    docker-compose run main cap production deploy
+    docker-compose run main /bin/sh -lc "cap production deploy"
