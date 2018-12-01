@@ -8,6 +8,10 @@ WORKDIR $RAILS_ROOT
 # Setting env up
 ENV RAILS_ENV='production'
 ENV RACK_ENV='production' 
+ENV DATABSE_URL=postgres://postgres:@postgres:5432/docker-rails_prd
+ENV DATABSE_HOST=db
+ENV DATABASE_NAME=docker-rails_prd
+
 # Adding gems
 COPY Gemfile Gemfile
 COPY Gemfile.lock Gemfile.lock
