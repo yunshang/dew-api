@@ -12,9 +12,9 @@
 default: &default
   adapter: postgresql
   encoding: utf8
-  username: '<%= ENV['DATABASE_USERNAME'] %>'
-  database: '<%= ENV['DATABASE_NAME'] %>'
   host: '<%= ENV['DATABASE_HOST'] %>'
+  username: postgres  
+  password:  
 
 development:
   <<: *default

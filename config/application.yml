@@ -19,5 +19,6 @@ test:
 
 production:
   <<: *defaults
-  DATABASE_NAME: "wzz-moral-education_prd"
+  DATABASE_NAME: "docker-rails_prd"
   DATABASE_HOST: "db"
+  DATABASE_URL: 'postgres://postgres:@postgres:5432/docker-rails_prd'
