@@ -26,3 +26,4 @@ services:
       - 0.0.0.0:80:80
 volumes:
   rails_log:
+  postgres_data:

@@ -11,6 +11,7 @@ ENV RACK_ENV='production'
 ENV DATABSE_URL=postgres://postgres:@postgres:5432/docker-rails_prd
 ENV DATABSE_HOST=db
 ENV DATABASE_NAME=docker-rails_prd
+ENV RAILS_SERVE_STATIC_FILES=true
 
 # Adding gems
 COPY Gemfile Gemfile
@@ -18,6 +19,5 @@ COPY Gemfile.lock Gemfile.lock
 RUN bundle install --jobs 20 --retry 5 --without development test 
 # Adding project files
 COPY . .
-RUN bundle exec rake assets:precompile
 EXPOSE 3000
 CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]
