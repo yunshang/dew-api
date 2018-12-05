@@ -15,4 +15,11 @@ QueryType = GraphQL::ObjectType.define do
     description "Find a Work by ID"
     resolve ->(obj, args, ctx) { Work.find_by_id(args["id"]) }
   end
+
+  field :brand do
+    type BrandType
+    argument :id, !types.ID
+    description "Find a Brand by ID"
+    resolve ->(obj, args, ctx) { Brand.find_by_id(args["id"]) }
+  end
 end
