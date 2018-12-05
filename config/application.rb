@@ -16,8 +16,8 @@ module DockerRails
         resource '*', headers: :any, methods: [:get, :post, :options]
       end
     end
-    config.autoload_paths << Rails.root.join('app', 'graph')
-    config.autoload_paths << Rails.root.join('app', 'graph', 'types')
+    config.autoload_paths << Rails.root.join('app', 'graphql')
+    config.autoload_paths << Rails.root.join('app', 'graphql', 'types')
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers

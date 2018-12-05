@@ -1,4 +1,3 @@
-class DockerRailsSchema < GraphQL::Schema
-  mutation(Types::MutationType)
-  query(Types::QueryType)
+DockerRailsSchema = GraphQL::Schema.define do
+  query QueryType
 end
