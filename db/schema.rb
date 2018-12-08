@@ -65,6 +65,11 @@ ActiveRecord::Schema.define(version: 2018_11_27_074456) do
   end
 
   create_table "works", force: :cascade do |t|
+    t.string "name"
+    t.string "describe"
+    t.string "location"
+    t.string "category"
+    t.string "model"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

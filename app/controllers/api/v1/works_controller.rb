@@ -5,11 +5,14 @@ module Api::V1
     skip_before_action :verify_authenticity_token
     before_action :set_work, only: [:show, :update, :destroy]
 
+    def index
+      @works = Work.all
+    end
+
     def create
       @work = Work.new(work_params)
 
       if @work.save
-        @work.labels.create(name: 'test')
         render json: @work, message: { type: "success", cnt: "创建成功" }
       else
         render json: @work, status: :unprocessable_entity
